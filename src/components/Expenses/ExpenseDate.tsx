@@ -1,13 +1,17 @@
 import React from "react";
 import "src/components/Expenses/ExpenseDate.css";
 
-export default function ExpenseDate(date:any) {
+interface Props {
+  date: any;
+}
+
+export default function ExpenseDate({ date }: Props) {
   
-  const month: string = date.date.toLocaleString("en-us", { month: "long" });
+  const month: string = date.toLocaleString("en-us", { month: "long" });
   
-  const year: string = date.date.toLocaleString("en-us", { day: "2-digit" });
+  const year: string = date.toLocaleString("en-us", { day: "2-digit" });
  
-  const day: string = date.date.getFullYear();
+  const day: string = date.getFullYear();
 
   return (
     <div className="expense-date">
